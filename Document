@@ -1,0 +1,77 @@
+http://localhost:3000/health (Get)
+http://localhost:3000/api/users (Post)
+http://localhost:3000/api/exams (Post)
+http://localhost:3000/api/exams/attempt/:id (Post)
+http://localhost:3000/api/exams/stats/overall (Get)
+
+npm install express@5 cors dotenv@16 mongoose@8 node-fetch@3   // run this command in backend 
+
+
+
+
+
+🚀 Ultimate Project Setup Guide
+This document contains everything you need to set up, run, and test this MERN backend on any computer.
+
+1️⃣ Phase 1: Preparation (Do this once)
+Install Node.js:
+
+Download and install the LTS version from nodejs.org.
+Verify installation by opening a terminal and typing: node -v
+Get the Project Files:
+
+Copy your backend folder to the new computer.
+Do NOT copy the node_modules folder (it's too big and specific to your old PC).
+2️⃣ Phase 2: Installation
+Open Terminal:
+
+Navigate to your project folder:
+bash
+cd path/to/backend
+Install Dependencies (The Golden Command):
+
+Run this exact command to install all required packages with stable versions:
+bash
+npm install express@5 cors dotenv@16 mongoose@8 node-fetch@3
+Set Up Environment Variables:
+
+Create a new file named 
+.env
+ in the backend folder.
+Paste the following content into it:
+env
+PORT=3000
+MONGO_URI=mongodb+srv://admin:admin123@cluster0.nmxweba.mongodb.net/books_db?appName=Cluster0
+3️⃣ Phase 3: Running the Server
+Start the Backend:
+Run the command:
+bash
+npm start
+You should see:
+Server running in development mode on port 3000
+Visit: http://localhost:3000
+MongoDB Connected: ...
+4️⃣ Phase 4: Verification (API Cheatsheet)
+Use Thunder Client or Postman to test these URLs.
+
+🏥 Health Check
+GET http://localhost:3000/health
+👤 User Operations
+Create User: POST http://localhost:3000/api/users
+json
+{ "name": "Test", "email": "test@example.com", "password": "123", "role": "student" }
+Login: POST http://localhost:3000/api/users/login
+Get All: GET http://localhost:3000/api/users
+📝 Exam Operations
+Create Exam: POST http://localhost:3000/api/exams
+json
+{ "subject": "Math", "examdate": "2024-12-10", "duration": 60 }
+Get All: GET http://localhost:3000/api/exams
+Attempt: POST http://localhost:3000/api/exams/attempt/{exam_id}
+json
+{ "marks": 85 }
+Stats: GET http://localhost:3000/api/exams/stats/overall
+❓ Troubleshooting
+Error: "next is not a function" -> You installed Mongoose v9. Run npm install mongoose@8 to fix.
+Server crashes immediately -> You installed Dotenv v17. Run npm install dotenv@16 to fix.
+Database connection fails -> Check your internet connection (MongoDB Atlas requires internet).
