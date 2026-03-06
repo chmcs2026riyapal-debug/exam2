@@ -2,9 +2,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 
 // Make sure this matches your backend URL
-const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-  ? 'http://localhost:3000/api'
-  : 'https://enhance-version.onrender.com/api';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
 
 const api = axios.create({
   baseURL: API_URL,
