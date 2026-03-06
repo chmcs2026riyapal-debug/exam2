@@ -1,8 +1,8 @@
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-// Make sure this matches your backend URL
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
+// This is your deployed backend URL on Render
+const API_URL = 'https://backend-ar2w.onrender.com/api';
 
 const api = axios.create({
   baseURL: API_URL,
