@@ -12,7 +12,8 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 const allowedOrigins = [
-    'https://frontend-7372.onrender.com'
+    'https://frontend-7372.onrender.com' // FOR LOCAL RUN: Comment this out and uncomment the line below
+    // 'http://localhost:5173'
 ];
 
 app.use(cors({
